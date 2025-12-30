@@ -21,21 +21,24 @@ int alocacaoContigua(Bloco* disco, Arquivo* file) {
 
     for (int i = 0; i < TAM_DISCO; i++) {
         if (disco[i].ocupado == FALSE) {
-            if (cont == 0)
+            if (cont == 0) {
                 inicio = i;
+            }
 
             cont++;
 
-            if (cont == file->tamArquivo)
+            if (cont == file->tamArquivo){
                 break;
+            }
         } else {
             cont = 0;
             inicio = -1;
         }
     }
 
-    if (cont < file->tamArquivo)
+    if (cont < file->tamArquivo){
         return FALSE;
+    }
 
     file->inicioBloco = inicio;
 
